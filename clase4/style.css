@@ -1,0 +1,9 @@
+.encabezado {
+    height: 150px;
+    background-color: #436f92;
+    
+}
+.logo{
+    height: 100%;
+    justify-content: center;
+}
