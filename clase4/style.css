@@ -67,6 +67,10 @@
     color: rgb(31, 9, 236);
     
 }
+.btn-outline-success{
+    color: whitesmoke !important ;
+    border-color: whitesmoke !important;
+}
 .formulario{
     display: flex;
     flex-direction: column;
