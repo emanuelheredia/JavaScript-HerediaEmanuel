@@ -28,7 +28,6 @@ const tipoLubricantes = lubricante.filter(tipo => tipo.tipo == elecciónTipoLubr
 console.table(tipoLubricantes);
 
 //ORDENAMIENTO DE PRODUCTOS DE MENOR A MAYOR PRECIO ("ACEPTAR" DE MENOR A MAYOR, "CANCELAR" DE MAYOR A MENOR)
-
 let ordenarPrecio = window.confirm(`Ordenar el precio de menor a mayor?`);
 if(ordenarPrecio){
 lubricante.sort(function (a, b){
