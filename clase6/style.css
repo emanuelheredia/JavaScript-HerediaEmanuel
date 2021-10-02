@@ -1,0 +1,87 @@
+.encabezado {
+    height: 160px;
+    width: 100%;
+    background-color: #436f92;
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    
+}
+.encabezado::after{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background:  linear-gradient(to right, #12c2e9, #c471ed, #f64f59); 
+    content: " ";
+    height: 10%;
+    width: 100%;
+    filter: blur(10px);
+    z-index: -1;
+}
+.logo{
+    height: 80%;
+    justify-content: center;
+    margin: 1rem;
+    position:absolute;
+    left: 0px;
+    justify-self: flex-start;
+}
+.cuerpo {
+    background-image: url(https://fotos.perfil.com/2019/08/12/aceite-764842.jpg);
+    background-size: cover;
+    
+    z-index: -3;
+    height: 80vh;
+    width: 100%;
+}
+.navbar{
+    background-color: #436f92 !important;
+}
+.bg-light{
+    --bs-bg-opacity:0 !important;
+}
+.navbar-collapse{
+    justify-content: flex-start !important;
+}
+.container-fluid{
+    justify-content: flex-end;
+}
+.navbar-light .navbar-nav .nav-link{
+    color: whitesmoke !important;
+    font-size: 1.3rem;
+}
+.tituloSimulador { 
+    padding-top: 2rem;
+    color: darkgoldenrod;
+    font-size: 3rem;
+    text-align: center;
+    text-shadow: whitesmoke 1px -1px;
+    
+}
+.boton{
+    background-color: #436f92;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: .6rem;
+    margin-top: 1rem;
+    color: rgb(31, 9, 236);
+    
+}
+.btn-outline-success{
+    color: whitesmoke !important ;
+    border-color: whitesmoke !important;
+}
+.formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.6rem;
+    text-shadow: whitesmoke 1px -1px;
+    font-weight: bolder;
+    color: rgb(31, 9, 236);
+    margin-bottom: 2rem;
+}
+.formulario input{
+    display: inline-block;
+    width: 30%;
+}
