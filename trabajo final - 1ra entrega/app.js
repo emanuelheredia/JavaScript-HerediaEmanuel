@@ -80,12 +80,12 @@ class Auto {
                             confirmacionFltroAire = window.confirm("Filtro de Aire?");
                             confirmacionFltroCombustible = window.confirm("Filtro de Combustible?");
                             return this.presupuesto(service,lubricante[aceitePersonalizado].precio,confirmacionAceite,confirmacionFltroAceite,confirmacionFltroAire,confirmacionFltroCombustible)
-                } 
+                } else{
                 confirmacionFltroAceite = window.confirm("Filtro de Aceite?");
                 confirmacionFltroAire = window.confirm("Filtro de Aire?");
                 confirmacionFltroCombustible = window.confirm("Filtro de Combustible?");
                 return this.presupuesto(service,0,confirmacionAceite,confirmacionFltroAceite,confirmacionFltroAire,confirmacionFltroCombustible)
-                
+                }
             }
             return this.presupuesto(service,this.costoAceite(this.año),confirmacionAceite,confirmacionFltroAceite,confirmacionFltroAire,confirmacionFltroCombustible)
     }
