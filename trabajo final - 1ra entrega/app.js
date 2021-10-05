@@ -1,18 +1,20 @@
+/*Este es un programa que permite simular un presupuesto para realizar un Service vehicular, con la posibilidad de que el usuario personalice el tipo de mantenimiento a efectuar*/
 
+//Clase para registrar datos del usuario (en un futuro se incluirán mas datos)
 class Usuario {
-    constructor(nombreApellido, telefono) {
-        this.nombreApellido = nombreApellido;
-        this.telefono = telefono;
+    constructor(nombre, apellido) {
+        this.nombre = nombre;
+        this.apellido = apellido;
     }
         saludar () {
-            alert(`Hola ${this.nombreApellido}, un placer su visita por aquí`);
+            alert(`Hola ${this.nombre} ${this.apellido}, un placer su visita por aquí`);
         }
 }
 
 //Solicitud de datos personales del usuario
 
 alert(`Bienvenido al simulador de precios de Lubricentro HyH`);
-const usuario1 = new Usuario ((prompt(`Por favor ingrese su Nombre y Apellido`)),(prompt(`y por último el teléfono de contacto`)));
+const usuario1 = new Usuario ((prompt(`Por favor ingrese su Nombre`)),(prompt(`y apellido`)));
 usuario1.saludar();
 
 //Inicialización de variables a utilizar en clase Auto, función "tipoDeService"
@@ -42,6 +44,9 @@ class Auto {
     this.año=año;}
     //Función para calcular el costo del aceite según el modelo del auto (año)
     costoAceite(){
+        if(this.año >2021 || this.año<1960){
+            alert(`El año ingresado se encuentra fuera del rango permitido`)
+        }else{
         if(this.año<=2000){
             return 2000;
         } else if(this.año>2000 && this.año<2015){
@@ -49,11 +54,12 @@ class Auto {
         } else if(this.año>=2015){
             return 6300;
         }
+        }
     }
 
     //Función que permite saber si el usuario desea realizar service completo o personalizado según necesidad
     tipoDeService(){
-        let service = window.confirm("Desea realizar el service completo cambiando todos los filtros y el aceite recomendado por el fabricante?");
+        let service = window.confirm(`Desea realizar el service completo cambiando todos los filtros y el aceite recomendado por el fabricante? ("Cancelar" para personalizarlo)`);
         
         //Condicionales para brindarle al usuario la posibilidad de personalizar service
         if(!service){
@@ -138,7 +144,7 @@ const vehiculo1 = new Auto (prompt("Ingresá la marca de tu auto"),prompt("model
 let costoTotal= vehiculo1.tipoDeService();
 
 //Mensaje en pantalla final del presupuesto calculado
-alert(`Le informamos que el service para su vehículo ${vehiculo1.marca} ${vehiculo1.modelo} modelo ${vehiculo1.año} según su elección y utilizando el aceite recomendado por el fabricante (o personalizado), tiene un costo final de $${costoTotal}`);
+alert(`${usuario1.nombre} Le informamos que el service para su vehículo ${vehiculo1.marca} ${vehiculo1.modelo} modelo ${vehiculo1.año} según su elección y utilizando el aceite recomendado por el fabricante (o personalizado), tiene un costo final de $${costoTotal}`);
 
 alert(`MUCHAS GRACIAS POR VISITAR NUESTRA PÁGINA!!`);
 
