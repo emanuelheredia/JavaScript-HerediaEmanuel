@@ -58,7 +58,7 @@
     text-align: center;
     font-weight: 900;
 }    
-.cuerpo {
+body {
     background-image: url(https://fotos.perfil.com/2019/08/12/aceite-764842.jpg);
     background-size: cover;
     width: 100%;
@@ -82,6 +82,14 @@
     font-size: 2rem;
     border: 1px white solid;
     
+}
+p p{
+    font-family: 'Kanit', sans-serif;
+    font-size: 2rem;
+    padding: 3rem;
+    color: white;
+    border: 1px solid white;
+    margin: 2rem;
 }
 .login{
     text-align: end;
@@ -126,4 +134,34 @@
     width: 50%;
     font-family: 'Kanit', sans-serif;
     height: 3rem;
+}
+select{
+    display: inline-block;
+    width: 50%;
+    font-family: 'Kanit', sans-serif;
+    font-size: 2rem;
+    height: 3rem;
+    margin-top: .7rem;
+    text-align: center;
+    text-shadow: black 2px -1px;
+    font-weight: bolder;
+    color: #436f92;
+}
+h3{
+    margin-top: 1rem;
+}
+#btn{
+    display: inline;
+    margin-left: 44vw;
+}
+#btnRango{
+    display: inline;
+    background-color: #436f92;
+    font-family: 'Kanit', sans-serif;
+    border: 1px white solid;
+    padding: .35rem;
+    font-size: 1rem;
+    color: white;
+    margin: .5rem;
+    width: 10%;
 }
