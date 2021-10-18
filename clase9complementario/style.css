@@ -1,0 +1,224 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	border: none;
+	outline: none;
+}
+.encabezado {
+    height: 100px;
+    width: 100%;
+    background-color: #436f92;
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse ;
+    align-items: center;
+}
+.logo{
+    height: 90%;
+    justify-content: center;
+    margin: 1rem;
+    position:absolute;
+    left: 0px;
+    justify-self: flex-start;
+    border-radius: 50%;
+}
+.nav{
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: lighter;
+    align-items: center;
+}
+.nav li a{
+    padding: 2rem;
+    font-family: 'Kanit', sans-serif;
+    list-style: none;
+    color: white;
+    text-decoration: none;
+}
+.nav li:nth-child(5){
+    opacity: .6;
+
+}
+.nav li{
+    width: 100%;
+    list-style: none;
+}
+.nav li a{
+    padding: 2rem;
+    font-family: 'Kanit', sans-serif;
+    list-style: none;
+    color: white;
+    text-decoration: none;
+}
+.nav li:hover a{
+    color: darkgoldenrod;
+    font-size: 1.7rem;
+    text-align: center;
+    font-weight: 900;
+}    
+body {
+    background-image: url(https://fotos.perfil.com/2019/08/12/aceite-764842.jpg);
+    background-size: cover;
+    width: 100%;
+    height: auto;
+
+}
+#cuerpoAdmin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#cuerpoAdmin input{
+    width: 30vw;
+}
+.formulario{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Kanit', sans-serif;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.8rem;
+    text-shadow: whitesmoke 2px -1px;
+    font-weight: bolder;
+    color: #436f92;
+    margin-bottom: 3rem;
+}
+.boton{
+    background-color: #022644;
+    font-family: 'Kanit', sans-serif;
+    padding: .6rem;
+    color: white;
+    font-size: 2rem;
+    border: 1px white solid;
+    display: block;
+    margin: auto;   
+}
+.btn{background-color: #436f92;
+    font-family: 'Kanit', sans-serif;
+    border: 1px white solid;
+    padding: .35rem;
+    font-size: 1rem;
+    color: white;
+    margin: .5rem;
+}
+.btnCarga{background-color: #436f92;
+    font-family: 'Kanit', sans-serif;
+    border: 1px white solid;
+    padding: .35rem;
+    font-size: 1rem;
+    color: white;
+    margin: .5rem;
+    width: 120px;
+}
+.formularioCarga{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.formularioCarga input{
+    width: 300px;
+    height: 2rem;
+}
+.tituloSimulador { 
+    padding: 2rem;
+    color: darkgoldenrod;
+    font-family: 'Kanit', sans-serif;
+    font-weight: bolder;
+    font-size: 3.5rem;
+    text-align: center;
+    text-shadow: whitesmoke 1px -1px;
+}
+#btnRango{
+    display: inline;
+    background-color: #436f92;
+    font-family: 'Kanit', sans-serif;
+    border: 1px white solid;
+    padding: .35rem;
+    font-size: 1rem;
+    color: white;
+    margin: .5rem;
+    width: 160px;;
+}
+.formulario input{
+    display: inline-block;
+    width: 50%;
+    font-family: 'Kanit', sans-serif;
+    height: 3rem;
+}
+option{
+    display: inline;
+    background-color: #436f92;
+    font-family: 'Kanit', sans-serif;
+    border: 1px white solid;
+    padding: .35rem;
+    font-size: 1rem;
+    color: white;
+    margin: .5rem;
+    
+}
+select{
+    display: inline;
+    background-color: #436f92;
+    font-family: 'Kanit', sans-serif;
+    border: 1px white solid;
+    padding: .35rem;
+    font-size: 1rem;
+    color: white;
+    margin: .5rem;
+    width: 160px;
+    text-align: center;
+}
+p p{
+    font-family: 'Kanit', sans-serif;
+    font-size: 2rem;
+    padding: 3rem;
+    color: white;
+    border: 1px solid white;
+    margin: 2rem;
+}
+.contenedor{
+    background-image: url(https://http2.mlstatic.com/D_NQ_NP_973285-MLA32344868803_092019-O.webp);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border: white 1px solid;
+    margin: 1rem;
+    width: 180px;
+    height: 280px;
+}
+#mensajePantallaRango{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.btnProducto{
+    background-color: #436f92;
+    font-family: 'Kanit', sans-serif;
+    border: 1px white solid;
+    padding: .35rem;
+    font-size: 1rem;
+    color: white;
+    margin: .5rem;
+}
+.btnProducto:hover{
+    border:2px white solid ;
+    font-size: 1.2rem;
+    padding: .4rem;
+    background-color: #022644;
+}
+.mensajePantallaRango2{
+    display: none !important; 
+}
+#productoElegido .contenedor{
+    opacity: .8;
+    background-size: cover;
+    height: 280px;
+}
+#productoElegido button{
+    display: none;
+}
