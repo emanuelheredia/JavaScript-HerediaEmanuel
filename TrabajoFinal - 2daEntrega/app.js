@@ -13,12 +13,12 @@ let codLubricanteElegido;
 const lubricante=JSON.parse(localStorage.getItem("ListaDeProductos"));
 let botonRango = document.getElementById("btnRango");
 
-//asignación evento boton para calcular rango lubricantes
+//Asignación evento boton para calcular rango lubricantes
 botonRango.addEventListener("click", (e)=>{
     e.preventDefault();
     filtrarRangoPrecio();
 })
-//función que brinda los lubricantes dentro del rango de precios ingresado por el usuario
+//Función que brinda los lubricantes dentro del rango de precios ingresado por el usuario
 function filtrarRangoPrecio (){
     let elecciónRangoPrecioMax = Number(document.getElementById("rangoMaximoAceite").value);
     //Filtro de costo de aceite según ingreso de usuario
@@ -33,7 +33,7 @@ const imprimirProducto=(item)=>{
     let contenedor=document.createElement("div");
     contenedor.innerHTML=`  <h3>${item.marca}</h3>
     <h4>${item.tipo}</h4>
-    <h4>${item.envase} - $${item.precio}</h4>
+    <h4>${item.envase} - <strong>$${item.precio}</strong></h4>
     <button class="btnProducto" type="submit">Utilizar</button>`;
     contenedor.className="contenedor"
     document.getElementById("mensajePantallaRango").appendChild(contenedor);
@@ -55,6 +55,7 @@ const btnProductoSeleccionado=()=>{
                     }
                     document.getElementById("productoElegido").appendChild(productoElegido);
                 }
+                //se modifica clase de contenedor para dejar de mostrarlo en pantalla (css) y solo observar el producto elegido 
                 document.getElementById("mensajePantallaRango").className="mensajePantallaRango2";
             })
         }
@@ -79,10 +80,42 @@ document.getElementById("btn").addEventListener("click",()=>{
         document.getElementById("modelo").value,
         Number(document.getElementById("año").value))
     let costoTotal= tipoDeService();
+    
+    //Impresion en pantalla de la simulación según eleccion de tipo de service
+    let mensajeSimulador=document.getElementById("mensajeSimulador");
     let mensajePantalla=document.createElement("p");
-    mensajePantalla.innerHTML= `<p>Le informamos que el service para su vehículo ${vehiculo1.marca} ${vehiculo1.modelo} modelo ${vehiculo1.año} según su elección y utilizando el aceite recomendado por el fabricante (o personalizado), tiene un costo final de $ ${costoTotal}</p>`;
-    return document.body.appendChild(mensajePantalla);
+    mensajePantalla.id="mensaje"
+    let mensajePantallaAntiguo=document.getElementById("mensaje");
+
+    //Condicional para imprimir mensaje en pantalla o reemplazar el existente por el nuevo
+    if(document.getElementById("mensaje")==null){
+        if(service=="true"){
+            mensajePantalla.innerHTML=imprimirMensaje(service,vehiculo1,costoTotal);
+            return mensajeSimulador.appendChild(mensajePantalla);
+        }else{
+            mensajePantalla.innerHTML=imprimirMensaje(service,vehiculo1,costoTotal);
+            return mensajeSimulador.appendChild(mensajePantalla);
+        }
+    }
+    else{
+        if(service=="true"){
+            mensajePantalla.innerHTML= imprimirMensaje(service,vehiculo1,costoTotal);
+            return mensajeSimulador.replaceChild(mensajePantalla,mensajePantallaAntiguo);
+        }else{
+            mensajePantalla.innerHTML= imprimirMensaje(service,vehiculo1,costoTotal);
+            return mensajeSimulador.replaceChild(mensajePantalla,mensajePantallaAntiguo);
+        }
+    }
 })
+
+//Funcion que genera el mensaje de salida con el resultado de la simulacion
+const imprimirMensaje = (service,vehiculo1,costoTotal)=>{
+    if (service=="true"){
+        return `Le informamos que el service Completo para su vehículo ${vehiculo1.marca} ${vehiculo1.modelo} modelo ${vehiculo1.año} utilizando el aceite recomendado por el fabricante y cambiando todos los filtros, tiene un costo final de $ ${costoTotal}`
+    }else{
+        return `Le informamos que el service Personalizado para su vehículo ${vehiculo1.marca} ${vehiculo1.modelo} modelo ${vehiculo1.año} utilizando el aceite  y filtros que seleccionó, tiene un costo final de $ ${costoTotal}`;
+    }
+}
 
 //Funcion que calcula el presupuesto total según eleccion del usuario
 const presupuesto = (service,aceite,confirmacionFltroAceite,confirmacionFltroAire,confirmacionFltroCombustible) =>{
@@ -142,9 +175,10 @@ const tipoDeService= ()=>{
 }
 const mostrarFormularioSecu=()=>{
     let personalizado=document.getElementById("tipoDeService").value;
-    console.log(personalizado);
     if(personalizado=="false"){
-        document.getElementById("formularioEscondido").className="formularioEsconder";    
+        document.getElementById("formularioEscondido").className="formularioSecu";    
+    }else{
+        document.getElementById("formularioEscondido").className="formularioEscondido"; 
     }
 }
 document.getElementById("tipoDeService").addEventListener("click",()=>{
