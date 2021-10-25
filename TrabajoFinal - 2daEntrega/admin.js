@@ -19,8 +19,8 @@ let botonCrearProducto;
 
 //Funcion que valida si el usuario es el Admin con autorizacion para cargar productos
 const validarUsuario=()=>{
-    let ingresoUsuario=document.getElementById("inputUsuario").value;
-    let ingresoContraseña=document.getElementById("inputContraseña").value;
+    let ingresoUsuario=(document.getElementById("inputUsuario").value).trim();
+    let ingresoContraseña=(document.getElementById("inputContraseña").value).trim();
     if(ingresoUsuario===usuario & ingresoContraseña===contraseña){
         return "true";
     }else{
@@ -70,10 +70,10 @@ boton.onclick= ()=>{
 }
 //Funcion que recibe valores de los input ingresados en el HTML
 const cargarProducto=()=>{
-    let marca=document.getElementById("inputMarca").value;
-    let tipo=document.getElementById("inputTipo").value;
-    let envase=document.getElementById("inputEnvase").value;
-    let precio=document.getElementById("inputPrecio").value;
+    let marca=(document.getElementById("inputMarca").value).toUpperCase();
+    let tipo=(document.getElementById("inputTipo").value).toUpperCase();
+    let envase=(document.getElementById("inputEnvase").value).toUpperCase();
+    let precio=(document.getElementById("inputPrecio").value).toUpperCase();
     let producto=new Productos({marca:marca,tipo:tipo,envase:envase,precio:precio});
     listaDeProductos.push(producto);
     localStorage.setItem("ListaDeProductos",JSON.stringify(listaDeProductos));

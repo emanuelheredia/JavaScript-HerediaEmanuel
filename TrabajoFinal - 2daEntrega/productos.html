@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="./style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header class="encabezado">
+            <img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCNoVw5V7rDndcA5KTCkc8iYmOh6tO68TUDkJrCWh0RfK0MZb6g_ZpbpADTtUU8q2h4VA&usqp=CAU" alt="logo">
+            <ul class="nav">
+                <li><a href="./index.html">Home</a></li> 
+                <li><a href="">Productos</a></li>
+                <li><a href="">Cotizador</a></li>
+                <li><a href="">Ubicación</a></li>
+                <li><a href="./admin.html">Admin</a></li>
+            </ul>
+        </header>
+        <main class="cuerpoProductos">
+            <div id="productos"></div>
+            <div id="mensajeCompra"></div>
+            <div>
+            <button class="btn" id="btnVer">Ver Carrito</button>
+            <button class="btn" id="btnFinalizar">Finalizar Compra</button>
+            <button class="btn" id="btnCancelar">Vaciar Carrito</button>
+            </div>
+            <div class="modal_container" id="modal_container">
+                <div class="modal">
+                    <h2>Producto Agregado al Carrito</h2>
+                    <button class="btn" id="cerrarModal">Cerrar</button>
+                </div>
+            </div>
+            <div class="modal_container" id="modal_container_carrito">
+                <div class="modal_carrito">
+                    <div id="mensajeCarrito"></div>
+                    <button class="btn" id="cerrarModalCarrito">Cerrar</button>
+                </div>
+            </div>
+        </main>    
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="./productos.js"></script>
+    </body>
+</html>

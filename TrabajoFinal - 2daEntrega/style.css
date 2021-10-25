@@ -141,6 +141,9 @@ body p{
     color: white;
     margin: .5rem;
 }
+.btn:hover{
+    transform: scale(1.1);
+}
 .btnCarga{background-color: #436f92;
     font-family: 'Kanit', sans-serif;
     border: 1px white solid;
@@ -275,4 +278,89 @@ p{
 }
 #productoElegido button{
     display: none;
+}
+#productos{
+    margin: 3rem;
+    display: flex;
+}
+.card{
+    font-family: 'Kanit', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin:1rem;
+    background-color: whitesmoke;
+    width: 150px;
+    height: auto;
+}
+.card:hover{
+    transform: scale(1.1);
+}
+.btnComprar{
+    font-family: 'Kanit', sans-serif;
+    font-size: large;
+    font-weight: bolder;
+    background-color: yellow;
+    padding: 10px;
+    margin:10px;}
+.btnComprar:hover{
+    transform: scale(1.2);
+}
+.cuerpoProductos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.modal_container{
+    display: flex;
+    align-items: center;
+    font-family: 'Kanit', sans-serif;
+    justify-content: center;
+    position: fixed;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0;
+}
+.modal_container_carrito{
+    display: flex;
+    align-items: center;
+    font-family: 'Kanit', sans-serif;
+    justify-content: center;
+    position: fixed;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0;
+}
+.modal{
+    background-color: rgb(32, 169, 248);
+    width: 400px;
+    max-width: 100%;
+    padding: 30px 50px;
+    border-radius: 5px;
+    box-shadow:0 2px 4px rgba(0,0,0,0.2);
+    text-align: center;
+}
+.modal_carrito{
+    background-color: rgb(32, 169, 248);
+    width: 400px;
+    max-width: 100%;
+    padding: 30px 50px;
+    border-radius: 5px;
+    box-shadow:0 2px 4px rgba(0,0,0,0.2);
+    text-align: center;
+}
+.modal h2{
+    opacity: .8;
+    margin-bottom: 2rem;
+}
+.show{
+    pointer-events: auto;
+    opacity: 1;
 }
