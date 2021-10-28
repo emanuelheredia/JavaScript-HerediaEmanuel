@@ -77,6 +77,9 @@ body {
 #cuerpoAdmin input{
     width: 30vw;
 }
+.form{
+    display: none;
+}
 #formulario{
     display: flex;
     flex-direction: column;
@@ -129,9 +132,11 @@ body p{
     display: block;
     margin: auto; 
     margin-bottom: 3rem;  
+    border-radius: 5%;
 }
 #botonCrear{
     margin: 2rem;
+    border-radius: 5%;
 }
 .btn{background-color: #436f92;
     font-family: 'Kanit', sans-serif;
@@ -140,6 +145,7 @@ body p{
     font-size: 1rem;
     color: white;
     margin: .5rem;
+    border-radius: 5%;
 }
 .btn:hover{
     transform: scale(1.1);
@@ -152,6 +158,7 @@ body p{
     color: white;
     margin: .5rem;
     width: 120px;
+    border-radius: 5%;
 }
 .formularioCarga{
     display: flex;
@@ -161,6 +168,9 @@ body p{
 .formularioCarga input{
     width: 30vw;
     height: 2rem;
+    border-radius: 5px;
+    margin-top: .5rem;
+    margin-bottom: 1rem;
 }
 .tituloSimulador { 
     padding: 2rem;
@@ -180,7 +190,8 @@ body p{
     font-size: 1rem;
     color: white;
     margin: .5rem;
-    width: 160px;;
+    width: 160px;
+    border-radius: 5%;
 }
 #formulario input{
     display: inline-block;
@@ -189,6 +200,9 @@ body p{
     width: 30vw;
     font-size: 2rem;
     padding: 5px;
+    border-radius: 5px;
+    margin-top: .5rem;
+    margin-bottom: 1rem;
 }
 #formularioEscondido input{
     display: inline-block;
@@ -197,6 +211,9 @@ body p{
     height: 3rem;
     font-size: 2rem;
     padding: 5px;
+    border-radius: 5px;
+    margin-top: .5rem;
+    margin-bottom: 1rem;
 }
 option{
     display: inline;
@@ -218,8 +235,9 @@ select{
     font-size: 1rem;
     color: white;
     margin: .5rem;
-    width: 160px;
+    width: auto;
     text-align: center;
+    border-radius: 5%;
 }
 p{
     font-family: 'Kanit', sans-serif;
@@ -303,7 +321,9 @@ p{
     font-weight: bolder;
     background-color: yellow;
     padding: 10px;
-    margin:10px;}
+    margin:10px;
+    border-radius: 5%;
+}    
 .btnComprar:hover{
     transform: scale(1.2);
 }
@@ -358,7 +378,6 @@ p{
 }
 .modal h2{
     opacity: .8;
-    margin-bottom: 2rem;
 }
 .show{
     pointer-events: auto;

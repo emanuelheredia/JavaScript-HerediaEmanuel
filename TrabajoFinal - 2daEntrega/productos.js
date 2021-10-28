@@ -67,15 +67,12 @@ $("#btnFinalizar").click(()=>{
                                 Le informamos que el monto total a pagar es de $${precioCompra}</p>`)
 })
 
-
 $(".btnComprar").click(()=>{
-    $("#modal_container").addClass(`show`);
-})
-$("#cerrarModal").click(()=>{
-    $("#modal_container").removeClass(`show`);
+    $("#modal_container").fadeTo(500,1).delay(1000).fadeTo(500,0)
 })
 
 const mostrarCarrito=()=>{
+    let total=0;
     if($("#mostrarCarrito")==null){
         $("#mensajeCarrito").append(`<div id="mostrarCarrito"></div>`);
     }else{
@@ -87,8 +84,10 @@ const mostrarCarrito=()=>{
     }else{
     let carrito=JSON.parse(localStorage.getItem("Carrito"))
     for (productos of carrito){
+        total=Number(productos.precio)+Number(total)
         $("#mostrarCarrito").append(`<h3>${productos.marca} - ${productos.tipo} - ${productos.envase} - $${productos.precio}</h3>`)
     }
+    $("#mostrarCarrito").append(`<h3 style="color:red;font-size:30px">TOTAL = $${total}</h3>`)
     }
 }
 
@@ -96,7 +95,6 @@ $("#btnVer").click(()=>{
     $("#modal_container_carrito").addClass(`show`);
     mostrarCarrito();
 })
-
 $("#cerrarModalCarrito").click(()=>{
     $("#modal_container_carrito").removeClass(`show`);
 })

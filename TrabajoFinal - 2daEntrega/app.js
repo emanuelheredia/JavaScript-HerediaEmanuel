@@ -76,8 +76,8 @@ const costoAceite = () =>{
 document.getElementById("btn").addEventListener("click",()=>{
     tipoDeService();
     const vehiculo1=new Auto(
-        document.getElementById("marca").value,
-        document.getElementById("modelo").value,
+        (document.getElementById("marca").value).toUpperCase(),
+        (document.getElementById("modelo").value).toUpperCase(),
         Number(document.getElementById("año").value))
     let costoTotal= tipoDeService();
     

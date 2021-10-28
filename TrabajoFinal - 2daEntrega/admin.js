@@ -11,7 +11,6 @@ class Productos {
 //Variables Globales e inicializaciones
 let usuario="coder";
 let contraseña="coderhouse";
-let bucle;
 let listaDeProductos;
 let boton=document.getElementById("btn");
 let cuerpoAdmin;
@@ -31,18 +30,13 @@ const validarUsuario=()=>{
 //Escucha evento "click" en boton de acceso
 boton.onclick= ()=>{
     if (validarUsuario()=="false"){
-        let formulario=document.getElementById("formulario");
-        let leyenda=document.createElement("h4");
-        leyenda.innerHTML="Usuario o Contraseña incorrecto";
-        formulario.appendChild(leyenda);
+        $("#formulario").append("<h4>Usuario o Contraseña incorrecto</h4>");
+        $("h4").fadeOut(3000);
     }
     else{
-        let cuerpoAdmin=document.getElementById("cuerpoAdmin");
-        crearBoton(cuerpoAdmin);
-        let botonCrear=document.getElementById("botonCrear");
-        botonCrear.onclick=()=>{
-            let formularioCarga=document.createElement("div");
-            formularioCarga.innerHTML =     `<form class="formulario" id="formulario" action="">
+        $("#formulario").slideUp(500);
+        $("#btn").slideUp(500);
+        $("#cuerpoAdmin").append(`<div class="form"> <form class="formulario formularioCarga" id="formulario" action="">
                                             <label for="">Marca del Lubricante</label>
                                             <input id="inputMarca" type="text">
                                             <label for="">Tipo</label>
@@ -51,21 +45,18 @@ boton.onclick= ()=>{
                                             <input id="inputEnvase" type="text">
                                             <label for="">Precio</label>
                                             <input id="inputPrecio" type="text">
-                                            </form>
                                             <div>
-                                            <button id="botonCargar" class="btnCarga" name="button">CARGAR</button><button id="botonFinalizar" class="btnCarga" name="button">FINALIZAR</button>
-                                            </div>`
-            cuerpoAdmin.appendChild(formularioCarga);
-            formularioCarga.className="formularioCarga"
-            verificarStorage();
-            let botonCargar=document.getElementById("botonCargar");
-            document.getElementById("botonFinalizar").addEventListener("click",()=>{
-                window.location.reload();
-            })
-            botonCargar.addEventListener("click",()=>{
-                    cargarProducto();  
-                })
-            }
+                                                <button id="botonCargar" class="btnCarga" name="button">CARGAR</button><button id="botonFinalizar" class="btnCarga" name="button">FINALIZAR</button>
+                                            </div>
+                                        </form>
+                                </div>`
+                                )
+        $(".form").slideDown(3000)
+        verificarStorage();
+        $("#botonCargar").click((e)=>{
+            cargarProducto();  
+            e.preventDefault();
+        })
     }
 }
 //Funcion que recibe valores de los input ingresados en el HTML
@@ -77,13 +68,6 @@ const cargarProducto=()=>{
     let producto=new Productos({marca:marca,tipo:tipo,envase:envase,precio:precio});
     listaDeProductos.push(producto);
     localStorage.setItem("ListaDeProductos",JSON.stringify(listaDeProductos));
-}
-const crearBoton=(cuerpoAdmin)=>{
-    botonCrearProducto=document.createElement("button");
-    botonCrearProducto.innerHTML="INGRESAR PRODUCTO";
-    cuerpoAdmin.appendChild(botonCrearProducto);
-    botonCrearProducto.className="btn"
-    botonCrearProducto.id="botonCrear";
 }
 //Funcion que verifica si hay elementos en la lista LocalStorage para reutilizarla
 const verificarStorage=()=>{
