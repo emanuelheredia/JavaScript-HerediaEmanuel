@@ -100,7 +100,7 @@ $("#cerrarModalCarrito").click(()=>{
 const url = "https://jsonplaceholder.typicode.com/comments";
 $("main").append(`<button class="btn" id="verComentarios">Opiniones sobre nuestros productos</button>`);
 $("#verComentarios").click(()=>{
-    $.get(url,function(res,est){
+    $.getJSON(url,function(res,est){
         if(est==="success"){
             let datos=res;
             let id;
