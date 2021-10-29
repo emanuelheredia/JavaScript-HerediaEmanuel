@@ -28,7 +28,6 @@ const cargarCarrito=(carrito)=>{
     }
     return productoElegido;
 }
-
 const verificarStorage=()=>{
     if(localStorage.getItem("Carrito")==null){
         return carrito=[];
@@ -90,11 +89,32 @@ const mostrarCarrito=()=>{
     $("#mostrarCarrito").append(`<h3 style="color:red;font-size:30px">TOTAL = $${total}</h3>`)
     }
 }
-
 $("#btnVer").click(()=>{
     $("#modal_container_carrito").addClass(`show`);
     mostrarCarrito();
 })
 $("#cerrarModalCarrito").click(()=>{
     $("#modal_container_carrito").removeClass(`show`);
+})
+
+const url = "https://jsonplaceholder.typicode.com/comments";
+$("main").append(`<button class="btn" id="verComentarios">Opiniones sobre nuestros productos</button>`);
+$("#verComentarios").click(()=>{
+    $.get(url,function(res,est){
+        if(est==="success"){
+            let datos=res;
+            let id;
+            for(const comen of datos){
+                $("#comentarios").append(`<div class="cardComentario">
+                    <h2>...${comen.name}</h2>
+                    <h3>${comen.email}</h3>
+                    <h4>${comen.body}</h4>               
+                </div>`)
+                id=comen.id;
+                if(id==4){
+                    break;
+                }
+            }
+        }
+    })
 })

@@ -308,9 +308,12 @@ p{
     justify-content: space-around;
     align-items: center;
     margin:1rem;
-    background-color: whitesmoke;
+    opacity: .8;
+    background-color: rgb(0, 0, 0);
     width: 150px;
+    color: cornsilk;
     height: auto;
+    border-radius: 5px;
 }
 .card:hover{
     transform: scale(1.1);
@@ -382,4 +385,23 @@ p{
 .show{
     pointer-events: auto;
     opacity: 1;
+}
+#comentarios{
+    display: flex;
+}
+.cardComentario{
+    width: auto;
+    height: auto;
+    opacity: .8;
+    background-color: rgb(197, 115, 8);
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Kanit', sans-serif;
+}
+#verComentarios{
+    margin-top: 3rem;
 }
