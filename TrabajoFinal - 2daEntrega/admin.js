@@ -13,7 +13,7 @@ class Productos {
 let usuario = "coder";
 let contraseña = "coderhouse";
 let listaDeProductos;
-let boton = document.getElementById("btn");
+let boton = $("#btnRango");
 let cuerpoAdmin;
 let botonCrearProducto;
 
@@ -29,7 +29,8 @@ const validarUsuario = () => {
 }
 
 //Escucha evento "click" en boton de acceso
-boton.onclick = () => {
+boton.on("click", (e) => {
+    e.preventDefault();
     if (validarUsuario() == "false") {
         $("#formulario").append("<h4>Usuario o Contraseña incorrecto</h4>");
         $("h4").fadeOut(3000);
@@ -47,7 +48,7 @@ boton.onclick = () => {
                                             <label for="">Precio</label>
                                             <input id="inputPrecio" type="text">
                                             <div>
-                                                <button id="botonCargar" class="btnCarga" name="button">CARGAR</button><button id="botonFinalizar" class="btnCarga" name="button">FINALIZAR</button>
+                                                <button id="botonCargar" class="btnCarga btn" name="button">CARGAR</button><button id="botonFinalizar" class="btnCarga btn" name="button">FINALIZAR</button>
                                             </div>
                                         </form>
                                 </div>`
@@ -56,10 +57,11 @@ boton.onclick = () => {
         verificarStorage();
         $("#botonCargar").click((e) => {
             cargarProducto();
+            $(".modal_container_carga").fadeTo(500,1).delay(1000).fadeTo(500,0)
             e.preventDefault();
         })
     }
-}
+})
 //Funcion que recibe valores de los input ingresados en el HTML
 const cargarProducto = () => {
     let marca = (document.getElementById("inputMarca").value).toUpperCase();

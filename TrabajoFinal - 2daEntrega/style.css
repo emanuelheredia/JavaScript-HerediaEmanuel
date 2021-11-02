@@ -59,7 +59,7 @@
     font-weight: 900;
 }    
 body {
-    background-image: url(https://fotos.perfil.com/2019/08/12/aceite-764842.jpg);
+    background-image: url(./image/descarga.jpg);
     background-size: cover;
     width: 100%;
     height: auto;
@@ -69,6 +69,34 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.principal{
+    width: 100vw;
+    height: 85vh;
+    border-bottom: 3px solid #436f92;
+    opacity: .9;
+}
+.titulo1{
+    position: absolute;
+    top: 15rem;
+    left: 4rem;
+    font-family: 'Kanit', sans-serif;
+    text-shadow: black 2px -1px;
+    font-size: 4rem;
+    font-weight: bolder;
+    opacity: .8;
+    color: rgb(184, 167, 11);
+}
+.titulo2{
+    position: absolute;
+    top: 19rem;
+    left: 4rem;
+    font-family: 'Kanit', sans-serif;
+    text-shadow: black 2px -1px;
+    font-size: 4rem;
+    font-weight: bolder;
+    opacity: .8;
+    color: rgb(184, 89, 11);
 }
 #cuerpoAdmin form{
     margin: 2rem;
@@ -177,7 +205,7 @@ body p{
     color: darkgoldenrod;
     font-family: 'Kanit', sans-serif;
     font-weight: bolder;
-    font-size: 5rem;
+    font-size: 3.5rem;
     text-align: center;
     text-shadow: whitesmoke 2px -2px;
 }
@@ -298,8 +326,14 @@ p{
     display: none;
 }
 #productos{
-    margin: 3rem;
+    width: 90vw;
+    margin: 1rem;
+    border-top: 3px solid #436f92;
+    border-bottom: 3px solid #436f92;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .card{
     font-family: 'Kanit', sans-serif;
@@ -335,7 +369,7 @@ p{
     flex-direction: column;
     align-items: center;
 }
-.modal_container{
+.modal_container, .modal_container_carga, .modal_container_carrito{
     display: flex;
     align-items: center;
     font-family: 'Kanit', sans-serif;
@@ -347,21 +381,9 @@ p{
     height: 100vh;
     width: 100vw;
     opacity: 0;
+    z-index: 2;
 }
-.modal_container_carrito{
-    display: flex;
-    align-items: center;
-    font-family: 'Kanit', sans-serif;
-    justify-content: center;
-    position: fixed;
-    pointer-events: none;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    opacity: 0;
-}
-.modal{
+.modal, .modal_carrito{
     background-color: rgb(32, 169, 248);
     width: 400px;
     max-width: 100%;
@@ -369,15 +391,7 @@ p{
     border-radius: 5px;
     box-shadow:0 2px 4px rgba(0,0,0,0.2);
     text-align: center;
-}
-.modal_carrito{
-    background-color: rgb(32, 169, 248);
-    width: 400px;
-    max-width: 100%;
-    padding: 30px 50px;
-    border-radius: 5px;
-    box-shadow:0 2px 4px rgba(0,0,0,0.2);
-    text-align: center;
+    opacity: .95;
 }
 .modal h2{
     opacity: .8;
@@ -388,9 +402,11 @@ p{
 }
 #comentarios{
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 .cardComentario{
-    width: auto;
+    width: 250px;
     height: auto;
     opacity: .8;
     background-color: rgb(197, 115, 8);
@@ -405,3 +421,62 @@ p{
 #verComentarios{
     margin-top: 3rem;
 }
+.contadorCarrito{
+    font-family: 'Kanit', sans-serif;
+    text-align: center;
+    position: absolute;
+    top: 40px;
+    right: 34px;
+    color: red;
+    border-radius: 50%;
+    width: 20px;
+    font-size: 18px;
+    font-weight: bolder;
+    height: auto;}
+.carrito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tituloCarrito{
+    display: flex;
+    width: 100%;
+    border-bottom: 2px solid black;
+}
+.total{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    border-top: 2px solid black;
+    font-size: 1.5rem;
+}
+#mostrarCarrito{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+#mostrarCarrito h3{
+    display: inline;
+    padding: 1rem;
+}
+.modalCarrito{
+    width: 100%;
+    text-align: start;
+    display: flex;
+    justify-content: space-between;
+}
+.contenedorProductos{
+    width: 100%;
+    margin-left: 2rem;
+}
+.contenedorProductos div{
+    display: flex;
+    width: 100%;
+    justify-content: start;
+    font-size: 1.5rem;
+    font-family: 'Kanit', sans-serif;
+    color: white;
+}
+
