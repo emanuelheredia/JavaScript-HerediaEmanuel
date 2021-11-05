@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="./style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet">
+    </head>
+    <body id="body">
+        <header class="encabezado">
+            <img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCNoVw5V7rDndcA5KTCkc8iYmOh6tO68TUDkJrCWh0RfK0MZb6g_ZpbpADTtUU8q2h4VA&usqp=CAU" alt="logo">
+            <ul class="nav">
+                <li><a href="./index.html">Home</a></li> 
+                <li><a href="./productos.html">Tienda</a></li>
+                <li><a href="./admin.html">Admin</a></li>
+            </ul>
+        </header>
+        <main id="cuerpoAdmin">
+        <form class="formulario formularioCarga" id="formulario" type="submit"  action="">
+            <label for="">Usuario</label>
+            <input id="inputUsuario" type="text" >
+            <label for="">Constraseña</label>
+            <input id="inputContraseña" type="password">
+            <button id="btnRango" class="btn" name="button" type="submit">ACCEDER</button>
+        </form>
+        <div class="modal_container_carga" id="modal_container_carga">
+            <div class="modal">
+                <h2>Producto Agregado a la base de datos</h2>
+            </div>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./admin.js"></script>
+</body>
+</html>
